@@ -22,6 +22,18 @@ mongoose
 const { Message } = require('./models/Message')
 const { User } = require('./models/User')
 
+app.get('/about', (req,res)=> {
+  res.json({
+    title: "ABOUT ME",
+    paragraphs: [
+      "My name is Ryan Han, an undergraduate at NYU Tisch School of the Arts, majoring in Interactive Media Arts and pursuing a double major in Computer Science.",
+      "I approach UI/UX design as both art and architecture: crafting interfaces that are intuitive, poetic, and deeply rooted in human behavior. With expertise across Interactive Media Arts and Computer Science, I merge technical precision with creative exploration.",
+      "For me, design is not decoration but narrative: each interaction is a story that can spark curiosity, build connection, and transform how people experience technology."
+    ],
+    imageUrl: "/my-photo.jpg",
+  })
+})
+
 // a route to handle fetching all messages
 app.get('/messages', async (req, res) => {
   // load all messages from database
